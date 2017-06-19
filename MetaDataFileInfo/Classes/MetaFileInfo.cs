@@ -11,7 +11,7 @@
   /// <summary>
   ///   The MetaFileInfo class.
   /// </summary>
-  public class MetaFileInfo : IMetaFileInfo, IEnumerable<KeyValuePair<string, Property>>
+  public class MetaFileInfo : IMetaFileInfo
   {
     /// <summary>
     ///   The used file Info.
