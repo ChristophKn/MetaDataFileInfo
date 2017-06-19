@@ -32,7 +32,7 @@
         .Select(property => property.GetValue(null))
         .Cast<PropertyKey>();
 
-      var properties = propertyKeys.Select(property => shellFile.Properties.GetProperty(property))
+      var properties = propertyKeys.Select(shellFile.Properties.GetProperty)
         .Where(property => !property.Description.DisplayName.IsNullOrEmpty())
         .Distinct(new DisplayNameComparer())
         .ToDictionary(property => property.Description.DisplayName, property => property.PropertyKey, StringComparer.InvariantCultureIgnoreCase);
@@ -49,12 +49,8 @@
     public static IShellProperty GetPropertyByDisplayName(this ShellFile shellFile, string displayName)
     {
       var properties = shellFile.GetPropertyKeysWithName();
-      if (properties.ContainsKey(displayName))
-      {
-        return shellFile.Properties.GetProperty(properties[displayName]);
-      }
 
-      return null;
+      return properties.ContainsKey(displayName) ? shellFile.Properties.GetProperty(properties[displayName]) : null;
     }
 
     /// <summary>
