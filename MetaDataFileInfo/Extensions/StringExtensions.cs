@@ -19,7 +19,7 @@
     }
 
     /// <summary>
-    /// Parses the given string to the given type.
+    ///   Parses the given string to the given type.
     /// </summary>
     /// <typeparam name="T">The type to convert too.</typeparam>
     /// <param name="s">The string to convert.</param>

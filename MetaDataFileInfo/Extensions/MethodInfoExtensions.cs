@@ -5,12 +5,12 @@
   using System.Reflection;
 
   /// <summary>
-  ///  The MethodInfoExtensions class.
-  /// </summary> 
+  ///   The MethodInfoExtensions class.
+  /// </summary>
   public static class MethodInfoExtensions
   {
     /// <summary>
-    /// Makes a parameter array for calling the method.
+    ///   Makes a parameter array for calling the method.
     /// </summary>
     /// <param name="method">The method to use.</param>
     /// <param name="parameters">The parameter to use.</param>

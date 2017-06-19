@@ -2,6 +2,7 @@
 {
   using System.IO;
   using Classes;
+  using Interfaces;
   using Microsoft.WindowsAPICodePack.Shell;
 
   /// <summary>
@@ -14,7 +15,7 @@
     /// </summary>
     /// <param name="fileInfo">The file info to use.</param>
     /// <returns>The meta file info.</returns>
-    public static MetaFileInfo MetaInfo(this FileInfo fileInfo)
+    public static IMetaFileInfo MetaInfo(this FileInfo fileInfo)
     {
       return new MetaFileInfo(fileInfo);
     }
