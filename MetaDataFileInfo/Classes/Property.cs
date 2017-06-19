@@ -55,7 +55,7 @@
     /// <summary>
     ///   Gets the
     /// </summary>
-    private XmlHelper Xml => new XmlHelper(this.Value.ToString());
+    private XmlHelper Xml => new XmlHelper(this.Value?.ToString());
 
     /// <summary>
     ///   Gets or sets the value of the Property.
@@ -180,22 +180,12 @@
     }
 
     /// <summary>
-    ///   Gets the typed value.
+    ///   Returns the value as a string.
     /// </summary>
-    /// <typeparam name="T">type of value.</typeparam>
-    /// <returns>typed value.</returns>
-    public T To<T>()
+    /// <returns>The value as a string.</returns>
+    public override string ToString()
     {
-      return this.Value.To<T>();
-    }
-
-    /// <summary>
-    ///   Gets if the value is empty.
-    /// </summary>
-    /// <returns>true if null or empty.</returns>
-    public bool IsNullOrEmpty()
-    {
-      return this.Value.To<string>().IsNullOrEmpty();
+      return this;
     }
   }
 }
