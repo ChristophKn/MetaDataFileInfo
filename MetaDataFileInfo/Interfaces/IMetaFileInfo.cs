@@ -1,5 +1,7 @@
 ﻿namespace MetaDataFileInfo.Interfaces
 {
+  using Classes;
+
   /// <summary>
   ///   The MetaFileInfo Interface.
   /// </summary>
@@ -15,7 +17,7 @@
     /// </summary>
     /// <param name="key">The key of the meta data to get or set.</param>
     /// <returns>The value of the meta data.</returns>
-    IProperty this[string key] { get; set; }
+    Property this[string key] { get; set; }
 
     /// <summary>
     ///   Gets or sets the extended file info part if its a xml content.

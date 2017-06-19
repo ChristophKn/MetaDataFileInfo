@@ -9,7 +9,7 @@
   /// <summary>
   ///   The Property class.
   /// </summary>
-  internal class Property : IProperty
+  public class Property : IProperty
   {
     /// <summary>
     ///   The used display name.

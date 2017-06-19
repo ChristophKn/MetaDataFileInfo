@@ -32,6 +32,15 @@
     }
 
     /// <summary>
+    ///   Initializes a new instance of the MetaFileInfo class.
+    /// </summary>
+    /// <param name="filePath">The file path to use.</param>
+    public MetaFileInfo(string filePath)
+      : this(new FileInfo(filePath))
+    {
+    }
+
+    /// <summary>
     ///   Gets the properties.
     /// </summary>
     private IDictionary<string, Property> Properties => this.properties.Value;
@@ -68,7 +77,7 @@
     /// </summary>
     /// <param name="key">The key of the meta file info to get or set.</param>
     /// <returns>The value of the meta file info.</returns>
-    public IProperty this[string key]
+    public Property this[string key]
     {
       get
       {
