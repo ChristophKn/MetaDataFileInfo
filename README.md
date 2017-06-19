@@ -35,3 +35,9 @@ var propertyValue = metaData["KeyForTheMetaData"];
 //// Otherwise the value can be accessed by using this
 var propertyValue = metaData["KeyForTheMetaData"].Value;
 ````
+
+#### Enumerate through the properties
+````
+IEnumerable<KeyValuePair<string, Property>> properties = metaData.ToList();
+//// Where each KeyValuePair contains the Display-Name as the key and the actual Property as the value.
+````
