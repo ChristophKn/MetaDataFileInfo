@@ -1,6 +1,7 @@
 ﻿namespace MetaDataFileInfo.Classes
 {
   using System;
+  using System.Collections;
   using System.Collections.Generic;
   using System.IO;
   using System.Linq;
@@ -10,7 +11,7 @@
   /// <summary>
   ///   The MetaFileInfo class.
   /// </summary>
-  public class MetaFileInfo : IMetaFileInfo
+  public class MetaFileInfo : IMetaFileInfo, IEnumerable<KeyValuePair<string, Property>>
   {
     /// <summary>
     ///   The used file Info.
@@ -44,6 +45,24 @@
     ///   Gets the properties.
     /// </summary>
     private IDictionary<string, Property> Properties => this.properties?.Value;
+
+    /// <summary>
+    ///   Gets the enumerator containing the property key and the property itself.
+    /// </summary>
+    /// <returns>The property enumerator.</returns>
+    public IEnumerator<KeyValuePair<string, Property>> GetEnumerator()
+    {
+      return this.Properties.GetEnumerator();
+    }
+
+    /// <summary>
+    ///   Gets the enumerator for this meta file info.
+    /// </summary>
+    /// <returns>The enumerator.</returns>
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+      return this.GetEnumerator();
+    }
 
     /// <summary>
     ///   Gets or sets the extended file info part if its a xml content.

@@ -1,11 +1,12 @@
 ﻿namespace MetaDataFileInfo.Interfaces
 {
+  using System.Collections.Generic;
   using Classes;
 
   /// <summary>
   ///   The MetaFileInfo Interface.
   /// </summary>
-  public interface IMetaFileInfo
+  public interface IMetaFileInfo : IEnumerable<KeyValuePair<string, Property>>
   {
     /// <summary>
     ///   Gets a value indicating whether the meta data are read only or not.
