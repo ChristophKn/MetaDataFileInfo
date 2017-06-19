@@ -36,6 +36,16 @@ var propertyValue = metaData["KeyForTheMetaData"];
 var propertyValue = metaData["KeyForTheMetaData"].Value;
 ````
 
+You can also access the properties with an xml tag. It'll automatically store the given value inside an xml root object in the MetaData.
+#### Accessing the properties with xml
+````
+//// Writing xml
+metaData["KeyForTheMetaData", "XmlElementName"] = "SomeXmlToWrite";
+
+//// Reading xml
+var someXml = metaData["KeyForTheMetaData", "XmlElementName"];
+````
+
 #### Enumerate through the properties
 ````
 IEnumerable<KeyValuePair<string, Property>> properties = metaData.ToList();
