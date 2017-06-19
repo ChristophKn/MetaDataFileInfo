@@ -43,7 +43,7 @@
     /// <summary>
     ///   Gets the properties.
     /// </summary>
-    private IDictionary<string, Property> Properties => this.properties.Value;
+    private IDictionary<string, Property> Properties => this.properties?.Value;
 
     /// <summary>
     ///   Gets or sets the extended file info part if its a xml content.
@@ -94,8 +94,10 @@
         {
           this.Properties[key].Value = value?.Value;
         }
-
-        throw new ApplicationException($"Meta file info key \"{key}\" does not exist");
+        else
+        {
+          throw new ApplicationException($"Meta file info key \"{key}\" does not exist");
+        }
       }
     }
 
