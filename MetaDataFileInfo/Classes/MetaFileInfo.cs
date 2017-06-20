@@ -65,33 +65,6 @@
     }
 
     /// <summary>
-    ///   Gets or sets the extended file info part if its a xml content.
-    /// </summary>
-    /// <param name="key">key of extended file info.</param>
-    /// <param name="xmlElementName">xml element name,</param>
-    /// <returns>xml element value.</returns>
-    public string this[string key, string xmlElementName]
-    {
-      get => this[key][xmlElementName];
-
-      set => this[key][xmlElementName] = value;
-    }
-
-    /// <summary>
-    ///   Gets a value indicating whether the meta data are read only or not.
-    /// </summary>
-    public bool IsReadOnly
-    {
-      get
-      {
-        using (var shellFile = this.fileInfo.GetShellFile())
-        {
-          return shellFile.IsReadOnly();
-        }
-      }
-    }
-
-    /// <summary>
     ///   Gets or sets the meta file info.
     /// </summary>
     /// <param name="key">The key of the meta file info to get or set.</param>
@@ -116,6 +89,33 @@
         else
         {
           throw new ApplicationException($"Meta file info key \"{key}\" does not exist");
+        }
+      }
+    }
+
+    /// <summary>
+    ///   Gets or sets the extended file info part if its a xml content.
+    /// </summary>
+    /// <param name="key">key of extended file info.</param>
+    /// <param name="xmlElementName">xml element name,</param>
+    /// <returns>xml element value.</returns>
+    public string this[string key, string xmlElementName]
+    {
+      get => this[key][xmlElementName];
+
+      set => this[key][xmlElementName] = value;
+    }
+
+    /// <summary>
+    ///   Gets a value indicating whether the meta data are read only or not.
+    /// </summary>
+    public bool IsReadOnly
+    {
+      get
+      {
+        using (var shellFile = this.fileInfo.GetShellFile())
+        {
+          return shellFile.IsReadOnly();
         }
       }
     }
