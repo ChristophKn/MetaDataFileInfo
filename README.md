@@ -1,6 +1,6 @@
 # MetaDataFileInfo
 
-This library can read / write the MetaData on a file.
+This library can be used to read and write the metadata on a file.
 
 ## Usage
 
