@@ -26,12 +26,12 @@
     /// <returns>The converted object.</returns>
     public static T To<T>(this object obj, bool throwExceptionOnParseError = false)
     {
-      var sourceIsNum = obj != null && obj.GetType().IsEnum;
-      if ((typeof(T).IsClass || typeof(T).IsInterface || sourceIsNum) && typeof(T) != typeof(string))
+      var objIsEnum = obj != null && obj.GetType().IsEnum;
+      if ((typeof(T).IsClass || typeof(T).IsInterface || objIsEnum) && typeof(T) != typeof(string))
       {
         try
         {
-          if (sourceIsNum)
+          if (objIsEnum)
           {
             var type = Enum.GetUnderlyingType(obj.GetType());
             if (type == typeof(T))
